@@ -85,9 +85,6 @@ jobs:
           git commit -m "✨(qmk): Update firmware" || echo "No QMK change"
           git push
 
-      - name: Build qmk docker image
-        run: docker build -t qmk .
-
       - name: Build the layout
         id: build-layout
         run: |
@@ -105,7 +102,7 @@ jobs:
           mkdir -p ${keyboard_directory}/${{ github.event.inputs.layout_geometry }}/keymaps && cp -r ${{ github.event.inputs.layout_id }} "$_"
           
           # Build the layout
-          docker run -v ./qmk_firmware:/root --rm qmk /bin/sh -c "
+          docker run -v ./qmk_firmware:/root --rm ghcr.io/ericreeves/zsa-voyager-keymap:latest /bin/sh -c "
             qmk setup zsa/qmk_firmware -b firmware${{ steps.download-layout-source.outputs.firmware_version }} -y
             make ${make_prefix}${{ github.event.inputs.layout_geometry }}:${{ github.event.inputs.layout_id }}
           "
