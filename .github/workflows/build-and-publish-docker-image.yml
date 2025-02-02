@@ -1,6 +1,10 @@
 name: Publish Docker Image for ZSA Voyager Keymap
 
-on: [workflow_dispatch]
+on:
+  push:
+    paths:
+      - 'Dockerfile'
+      - '.github/workflows/build-and-publish-docker-image.yml'
 
 jobs:
   publish-zsa-voyager-keymap-image:
