@@ -21,7 +21,7 @@
 #undef MOUSEKEY_WHEEL_MAX_SPEED
 #define MOUSEKEY_WHEEL_MAX_SPEED 3
 
-#define SERIAL_NUMBER "5qwww/VqqjX4"
+#define SERIAL_NUMBER "5qwww/Azzn7x"
 #define LAYER_STATE_16BIT
 #define COMBO_COUNT 3
 
