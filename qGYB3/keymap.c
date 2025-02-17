@@ -497,7 +497,7 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_4] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_4, dance_4_finished, dance_4_reset),
         [DANCE_5] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_5, dance_5_finished, dance_5_reset),
         [DANCE_6] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_6, dance_6_finished, dance_6_reset),
-};
+}
 
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
   return 160;
@@ -508,40 +508,20 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   uint16_t other_keycode,
   keyrecord_t* other_record) {
 
-switch (tap_hold_keycode) {
-  case KC_ENTER:
-    return true; 
-    break;
-  case KC_ESCAPE:
-    return true;
-    break;
-  case KC_LEFT_CTRL:
-    return true;
-    break;
-  case KC_SPACE:
-    return true;
-    break;
-}
-
-
-// case HOME_S:  // S + H and S + G.
-// if (other_keycode == HOME_H || other_keycode == KC_G) { return true; }
-// break;
-// }
-
-// Allow same-hand holds with non-alpha keys.
-  if (other_keycode > KC_Z) { return true; }
-
-// Otherwise, follow the opposite hands rule.
-  return achordion_opposite_hands(tap_hold_record, other_record);
-}
-}
-
-
-// case HOME_S:  // S + H and S + G.
-// if (other_keycode == HOME_H || other_keycode == KC_G) { return true; }
-// break;
-// }
+  switch (tap_hold_keycode) {
+    case KC_ENTER:
+      return true; 
+      break;
+    case KC_ESCAPE:
+      return true;
+      break;
+    case KC_LEFT_CTRL:
+      return true;
+      break;
+    case KC_SPACE:
+      return true;
+      break;
+  }
 
 // Allow same-hand holds with non-alpha keys.
   if (other_keycode > KC_Z) { return true; }
