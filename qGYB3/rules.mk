@@ -7,12 +7,9 @@ RGB_MATRIX_CUSTOM_KB = yes
 TAP_DANCE_ENABLE = yes
 SPACE_CADET_ENABLE = no
 CAPS_WORD_ENABLE = yes
+COMBO_ENABLE = yes
 
 
 
-
-
-
-
-
+# Custom qmk
 ACHORDION_ENABLE = yes
