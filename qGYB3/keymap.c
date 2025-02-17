@@ -500,7 +500,7 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-  return 300;
+  return 160;
 }
 
 bool achordion_chord(uint16_t tap_hold_keycode,
