@@ -191,7 +191,7 @@ bool rgb_matrix_indicators_user(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (!process_achordion(keycode, record)) { return false; }
+  // if (!process_achordion(keycode, record)) { return false; }
   switch (keycode) {
     case ST_MACRO_0:
     if (record->event.pressed) {
@@ -208,9 +208,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void housekeeping_task_user(void) {
-  achordion_task();
-}
+// void housekeeping_task_user(void) {
+//   achordion_task();
+// }
 
 typedef struct {
     bool is_press_action;
@@ -499,18 +499,37 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_6] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_6, dance_6_finished, dance_6_reset),
 };
 
-bool achordion_chord(uint16_t tap_hold_keycode,
-  keyrecord_t* tap_hold_record,
-  uint16_t other_keycode,
-  keyrecord_t* other_record) {
+// bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
+//   uint16_t other_keycode, keyrecord_t* other_record) {
+// // Exceptionally allow some one-handed chords for hotkeys.
+// switch (tap_hold_keycode) {
+// case LCTL_T(KC_A):
+// if (other_keycode == KC_C || other_keycode == KC_V) {
+// return true;
+// }
+// break;
+// case RCTL_T(KC_SCLN):
+// if (other_keycode == KC_N) {
+// return true;
+// }
+// break;
+// }
+// // Otherwise defer to the opposite hands rule.
+// return get_chordal_hold_default(tap_hold_record, other_record);
+// }
 
-// Allow same-hand holds with non-alpha keys.
-  if (other_keycode > KC_Z) { return true; }
+// bool achordion_chord(uint16_t tap_hold_keycode,
+//   keyrecord_t* tap_hold_record,
+//   uint16_t other_keycode,
+//   keyrecord_t* other_record) {
 
-// Otherwise, follow the opposite hands rule.
-  return achordion_opposite_hands(tap_hold_record, other_record);
-}
+// // Allow same-hand holds with non-alpha keys.
+//   if (other_keycode > KC_Z) { return true; }
 
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-  return 800;
-}
+// // Otherwise, follow the opposite hands rule.
+//   return achordion_opposite_hands(tap_hold_record, other_record);
+// }
+
+// uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
+//   return 800;
+// }
