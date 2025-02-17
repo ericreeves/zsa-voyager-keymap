@@ -508,14 +508,34 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   uint16_t other_keycode,
   keyrecord_t* other_record) {
 
-// switch (tap_hold_keycode) { //   case KC_ENTER: //     return true; //     break;
-//   case KC_ESCAPE:
-//     return true;
-//     break;
-//   case KC_LEFT_CTRL:
-//     return true;
-//     break;
+switch (tap_hold_keycode) {
+  case KC_ENTER:
+    return true; 
+    break;
+  case KC_ESCAPE:
+    return true;
+    break;
+  case KC_LEFT_CTRL:
+    return true;
+    break;
+  case KC_SPACE:
+    return true;
+    break;
+}
+
+
+// case HOME_S:  // S + H and S + G.
+// if (other_keycode == HOME_H || other_keycode == KC_G) { return true; }
+// break;
 // }
+
+// Allow same-hand holds with non-alpha keys.
+  if (other_keycode > KC_Z) { return true; }
+
+// Otherwise, follow the opposite hands rule.
+  return achordion_opposite_hands(tap_hold_record, other_record);
+}
+}
 
 
 // case HOME_S:  // S + H and S + G.
