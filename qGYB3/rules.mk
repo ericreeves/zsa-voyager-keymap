@@ -11,5 +11,8 @@ CAPS_WORD_ENABLE = yes
 
 
 
-# Custom QMK here
+
+
+
+
 ACHORDION_ENABLE = yes
