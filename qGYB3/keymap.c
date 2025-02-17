@@ -500,7 +500,7 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-  return 160;
+  return 300;
 }
 
 bool achordion_chord(uint16_t tap_hold_keycode,
@@ -510,17 +510,13 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 
   switch (tap_hold_keycode) {
     case KC_ENTER:
-      return true; 
-      break;
+      return true;
     case KC_ESCAPE:
       return true;
-      break;
     case KC_LEFT_CTRL:
       return true;
-      break;
     case KC_SPACE:
       return true;
-      break;
   }
 
 // Allow same-hand holds with non-alpha keys.
