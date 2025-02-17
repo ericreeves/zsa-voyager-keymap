@@ -4,7 +4,7 @@
 */
 
 #undef TAPPING_TERM
-#define TAPPING_TERM 160
+#define TAPPING_TERM 250
 
 #define PERMISSIVE_HOLD
 
@@ -21,7 +21,8 @@
 #undef MOUSEKEY_WHEEL_MAX_SPEED
 #define MOUSEKEY_WHEEL_MAX_SPEED 16
 
-#define SERIAL_NUMBER "qGYB3/yoowQP"
+#define CAPS_LOCK_STATUS
+#define SERIAL_NUMBER "qGYB3/m55mjx"
 #define LAYER_STATE_16BIT
 #define COMBO_COUNT 1
 
