@@ -3,6 +3,9 @@
   See config.h options at https://docs.qmk.fm/#/config_options?id=the-configh-file
 */
 
+#undef TAPPING_TERM
+#define TAPPING_TERM 250
+
 #define PERMISSIVE_HOLD
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
@@ -19,8 +22,7 @@
 #define MOUSEKEY_WHEEL_MAX_SPEED 16
 
 #define CAPS_LOCK_STATUS
-#define HOLD_ON_OTHER_KEY_PRESS
-#define SERIAL_NUMBER "qGYB3/B44pNO"
+#define SERIAL_NUMBER "qGYB3/6aaE0R"
 #define LAYER_STATE_16BIT
 
 #define RGB_MATRIX_STARTUP_SPD 60
