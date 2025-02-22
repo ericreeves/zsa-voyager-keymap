@@ -27,5 +27,6 @@ jobs:
         docker build . --tag ghcr.io/ericreeves/zsa-voyager-keymap:build
         docker run ghcr.io/ericreeves/zsa-voyager-keymap:build
         ./docker-squash.sh ghcr.io/ericreeves/zsa-voyager-keymap:build -t ghcr.io/ericreeves/zsa-voyager-keymap:latest
+        docker images
         docker push ghcr.io/ericreeves/zsa-voyager-keymap:latest
 
