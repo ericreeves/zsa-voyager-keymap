@@ -27,10 +27,10 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    KC_PSCR,        KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           CW_TOGG,        
+    KC_PSCR,        KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_CAPS,        
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           TD(DANCE_0),    
-    MT(MOD_LCTL, KC_ESCAPE),KC_A,           MT(MOD_LALT, KC_S),MT(MOD_LCTL, KC_D),MT(MOD_LSFT, KC_F),ALL_T(KC_G),                                    ALL_T(KC_H),    MT(MOD_LSFT, KC_J),MT(MOD_LCTL, KC_K),MT(MOD_LALT, KC_L),KC_SCLN,        TD(DANCE_1),    
-    KC_BSPC,        MT(MOD_LGUI, KC_Z),KC_X,           LT(6,KC_C),     LT(5,KC_V),     MEH_T(KC_B),                                    MEH_T(KC_N),    KC_M,           TD(DANCE_2),    TD(DANCE_3),    MT(MOD_RGUI, KC_SLASH),KC_CAPS,        
+    MT(MOD_LCTL, KC_ESCAPE),KC_A,           MT(MOD_LALT, KC_S),MT(MOD_LCTL, KC_D),MT(MOD_LSFT, KC_F),KC_G,                                           KC_H,           MT(MOD_LSFT, KC_J),MT(MOD_LCTL, KC_K),MT(MOD_LALT, KC_L),KC_SCLN,        TD(DANCE_1),    
+    KC_BSPC,        MT(MOD_LGUI, KC_Z),KC_X,           LT(6,KC_C),     LT(5,KC_V),     KC_B,                                           KC_N,           KC_M,           TD(DANCE_2),    TD(DANCE_3),    MT(MOD_RGUI, KC_SLASH),CW_TOGG,        
                                                     LT(1,KC_SPACE), LT(2,KC_ENTER),                                 LT(4,KC_BSPC),  LT(3,KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
