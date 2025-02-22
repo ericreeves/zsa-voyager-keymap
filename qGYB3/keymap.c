@@ -260,8 +260,6 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_5] = ACTION_TAP_DANCE_TAP_HOLD(LCTL(KC_UP), KC_LEFT_CTRL),
 };
 
-MT(MOD_LCTL, KC_ESCAPE)
-
 bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
                       uint16_t other_keycode, keyrecord_t* other_record) {
 // Exceptionally allow some one-handed chords for hotkeys.
