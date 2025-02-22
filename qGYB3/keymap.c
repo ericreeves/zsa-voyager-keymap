@@ -260,37 +260,18 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_5] = ACTION_TAP_DANCE_TAP_HOLD(LCTL(KC_UP), KC_LEFT_CTRL),
 };
 
-// bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
-//   uint16_t other_keycode, keyrecord_t* other_record) {
-// // Exceptionally allow some one-handed chords for hotkeys.
-// switch (tap_hold_keycode) {
-// case LCTL_T(KC_A):
-// if (other_keycode == KC_C || other_keycode == KC_V) {
-// return true;
-// }
-// break;
-// case RCTL_T(KC_SCLN):
-// if (other_keycode == KC_N) {
-// return true;
-// }
-// break;
-// }
-// // Otherwise defer to the opposite hands rule.
-// return get_chordal_hold_default(tap_hold_record, other_record);
-// }
+MT(MOD_LCTL, KC_ESCAPE)
 
-// bool achordion_chord(uint16_t tap_hold_keycode,
-//   keyrecord_t* tap_hold_record,
-//   uint16_t other_keycode,
-//   keyrecord_t* other_record) {
-
-// // Allow same-hand holds with non-alpha keys.
-//   if (other_keycode > KC_Z) { return true; }
-
-// // Otherwise, follow the opposite hands rule.
-//   return achordion_opposite_hands(tap_hold_record, other_record);
-// }
-
-// uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-//   return 800;
-// }
+bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
+                      uint16_t other_keycode, keyrecord_t* other_record) {
+// Exceptionally allow some one-handed chords for hotkeys.
+  switch (tap_hold_keycode) {
+    case LCTL_T(KC_ESCAPE):
+      if (other_keycode == KC_Q || other_keycode == KC_W || other_keycode == KC_E || other_keycode == KC_R || other_keycode == KC_T || other_keycode == KC_A || other_keycode == KC_S || other_keycode == KC_D || other_keycode == KC_F || other_keycode == KC_G || other_keycode == KC_Z || other_keycode == KC_X || other_keycode == KC_C || other_keycode == KC_V || other_keycode == KC_B) {
+        return true;
+      }
+    break;
+  }
+// Otherwise defer to the opposite hands rule.
+  return get_chordal_hold_default(tap_hold_record, other_record);
+}
