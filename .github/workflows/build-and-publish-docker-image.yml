@@ -22,7 +22,10 @@ jobs:
 
     - name: Build the zsa-voyager-keymap Docker image
       run: |
-        docker build . --tag ghcr.io/ericreeves/zsa-voyager-keymap:latest
-        docker run ghcr.io/ericreeves/zsa-voyager-keymap:latest
+        curl -sL https://github.com/shinsenter/docker-squash/raw/main/docker-squash.sh -o ./docker-squash.sh
+        chmod +x ./docker-squash.sh
+        docker build . --tag ghcr.io/ericreeves/zsa-voyager-keymap:build
+        docker run ghcr.io/ericreeves/zsa-voyager-keymap:build
+        ./docker-squash.sh ghcr.io/ericreeves/zsa-voyager-keymap:build ghcr.io/ericreeves/zsa-voyager-keymap:latest
         docker push ghcr.io/ericreeves/zsa-voyager-keymap:latest
 
